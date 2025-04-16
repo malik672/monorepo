@@ -89,8 +89,8 @@ impl<P: Array> Arbiter<P> {
             .collect::<HashMap<P, _>>();
         players.sort();
         Self {
-            dealer_threshold: quorum(dealers.len() as u32).expect("insufficient dealers"),
-            player_threshold: quorum(players.len() as u32).expect("insufficient players"),
+            dealer_threshold: quorum(dealers.len() as u32),
+            player_threshold: quorum(players.len() as u32),
             previous,
             concurrency,
 
